@@ -1,0 +1,204 @@
+
+<!DOCTYPE html>
+<html lang="pt-BR">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>QR Codes das Mesas - Restaurante QR</title>
+    <style>
+        body {
+            font-family: Arial, sans-serif;
+            margin: 0;
+            padding: 20px;
+            background: white;
+        }
+        
+        .header {
+            text-align: center;
+            margin-bottom: 30px;
+            border-bottom: 2px solid #333;
+            padding-bottom: 20px;
+        }
+        
+        .qr-grid {
+            display: grid;
+            grid-template-columns: repeat(auto-fit, minmax(300px, 1fr));
+            gap: 30px;
+            margin-bottom: 30px;
+        }
+        
+        .qr-card {
+            border: 2px solid #333;
+            border-radius: 10px;
+            padding: 20px;
+            text-align: center;
+            background: white;
+            box-shadow: 0 2px 5px rgba(0,0,0,0.1);
+        }
+        
+        .mesa-numero {
+            font-size: 24px;
+            font-weight: bold;
+            margin-bottom: 15px;
+            color: #333;
+        }
+        
+        .qr-image {
+            margin: 15px 0;
+        }
+        
+        .qr-image img {
+            max-width: 200px;
+            height: auto;
+        }
+        
+        .mesa-url {
+            font-size: 12px;
+            color: #666;
+            word-break: break-all;
+            margin-top: 10px;
+        }
+        
+        .instrucoes {
+            background: #f8f9fa;
+            border: 1px solid #dee2e6;
+            border-radius: 5px;
+            padding: 20px;
+            margin-top: 30px;
+        }
+        
+        .instrucoes h3 {
+            margin-top: 0;
+            color: #333;
+        }
+        
+        .instrucoes ul {
+            margin: 10px 0;
+            padding-left: 20px;
+        }
+        
+        @media print {
+            body {
+                margin: 0;
+                padding: 10px;
+            }
+            
+            .qr-grid {
+                grid-template-columns: repeat(2, 1fr);
+                gap: 20px;
+            }
+            
+            .qr-card {
+                break-inside: avoid;
+                margin-bottom: 20px;
+            }
+        }
+    </style>
+</head>
+<body>
+    <div class="header">
+        <h1>QR Codes das Mesas</h1>
+        <h2>Restaurante QR - Sistema de Pedidos</h2>
+        <p>Escaneie o QR Code da sua mesa para fazer seu pedido</p>
+    </div>
+    
+    <div class="qr-grid">
+
+        <div class="qr-card">
+            <div class="mesa-numero">Mesa 01</div>
+            <div class="qr-image">
+                <img src="data:image/png;base64,iVBORw0KGgoAAAANSUhEUgAAAXIAAAFyAQAAAADAX2ykAAACiklEQVR4nO2bTWrcQBBGX0UCL1vgA/goPTfwkXwm30A6yhwg0FoOtPiyUPeMxsaxTRRFClULoUFv8UFRv91j4js2/PgWDs4777zzzjvv/Ee8FWuBsYXBWsw6sNNYv5021OP8ynyUJCVgeMpAyBDTZEAjSdI9/7f1OL8yP5YItZc0GfHcLpgS2JvqcX4dvn3zW0OXZIRc3zbW4/y6/Fv/FhsNlce2epxfl6/+DQJGIJ4N4utjtqhp/rpcgexNv/Nf4gczKw0zTfXn+CA7Mc3t87Z6nF+Jfx+h4WKCi4lxMt1/259+57/Cm1lLDdNGdqJE8mIm3lKP82vxzNNtP7/V0ZeQUU+j8gjSPCL3e9Pv/Nf4kJnDNJ5biOcHAZNBuJi9nL3+HpSf45eYGkkqUQtz6FakD7nG+d70O/+JLfJzTyNiAilR83PIEJXx/HxIfm6cLAqMkNDQXb+FVF4Wm6y96Xf+91bno/Exw2gQBQzPuYWxzQYtxNfrnnJv+p3/xGp+rvW3PK49dYLaXXt+Ph5f/RYyUFurUnBTo3lSktff/4EvXp2MoWukPlxMSmCn8cHPf4/JX+cjgJqk53HplrNLE+3xezz+Lj+HjJTq/DuX3qA6M7l/D8jX+L0uOeZdRqLWX6i3d9y/B+TRvdX9RmmtiuO9vzo2v7g/OXSNGJ4y6sfrdcpuYz3Or8zf7k/GNNmt3SpBfG4p6+id6nf+I1v0zzEt599yXAjcMrXn56Pz6inzr50olbiePvwLPc7/Gf/2/qTF1M0LZw3WlEPgmJDFfgs9zq/Lv7s/CU220lBNpuE5twzdz1bb6HF+XZ7ln0+4LpzT7VQ/U6qz198D8ub/73beeeedd975zflfIaLQ6EwXcLUAAAAASUVORK5CYII=" alt="QR Code Mesa 1">
+            </div>
+            <div class="mesa-url">http://192.168.1.11:5001/cardapio?mesa=1</div>
+        </div>
+
+        <div class="qr-card">
+            <div class="mesa-numero">Mesa 02</div>
+            <div class="qr-image">
+                <img src="data:image/png;base64,iVBORw0KGgoAAAANSUhEUgAAAXIAAAFyAQAAAADAX2ykAAACeUlEQVR4nO2bTYrjMBCFX40FXirQB8hR5JuFOVLfwD6KbyAtAzKvFyo5P02YNHiM1ZQWRo6+xYOiXD+qCPGTNf35EQ4Yb7zxxhtvvPGveNHlACQH/e0EyJDq2bCjHuM35gNJMgKYzhmYTgBCXARAR5LkI/+/9Ri/MZ/UQ+USF0GY3R2jjr2rHuO34d3TO6dTpMDnuttZj/Hb8s/21ZUE1Me+eozflq/29QSQAIRZgPD5kSVwKaf3LZCj6Tf+LX4SEU2Y0VV7pp4yYCnp8756jN+I/+6h/ioErkKkRfh4djz9xr/Di4hDddOOMkA9+akmPqp+418uLW59Bsf60Fd01IcnS4k8Hk2/8e/wHFNPIPUspW+YewJYBPBXkcts8bdRXv03xI4k1WuB4roVGX0unPlvq7zPwCSu9K/ItTU5+gy5RECGXfUYvw1f8+f0kQU+QqbTeuajbu46WUfTb/zbPDmLlO/zdM4AkoMMyQHB4m+rvMZVxo4IzEDgGmsBkBHQncXfBnncLv+KLUu6xQyE2GnhxGJ4s297/Oqr6r+1/qWm01wtbfZtly+3vki9NiPD7IBJ9JV/z1eLv23yd/5b2lRY698Sej2JEC3+Nso/9DdqklUmdUr8Ber0jtm3QR58XJpQ1dQK4ZZumX2b5R/mJ/tS/3JM9erorudxTP3G/4O/zU8CiyCU3erEs4O2ow+q3/hXq8Zf1DLoFoSZK+Tt+/xL+FILTSe95Cej3iSZ/zbJP89PCjyA8CngJJ1eAocIShj30GP8tvzakFyb0LUqUq9dxzmsPmqYX+cnASyimZbP0MA8O8iwpx7jN+LF/t9tvPHGG2+88bvzXzM/xupdI0hvAAAAAElFTkSuQmCC" alt="QR Code Mesa 2">
+            </div>
+            <div class="mesa-url">http://192.168.1.11:5001/cardapio?mesa=2</div>
+        </div>
+
+        <div class="qr-card">
+            <div class="mesa-numero">Mesa 03</div>
+            <div class="qr-image">
+                <img src="data:image/png;base64,iVBORw0KGgoAAAANSUhEUgAAAXIAAAFyAQAAAADAX2ykAAACiUlEQVR4nO2bTYrjMBSEq0aCXsowB8hR5BvMkcIcqW9gHSUHaJCXAZuahSQn6aaZNLiN3TwtEjv6FgWP9yuFwldW+vUlHDDeeOONN9544z/jWZcHMHogdQDZAezHttdvqMf4lfkoScoA0mmqWzHPBOAkSXrkv1uP8SvzY/VQnvNMxIu/Y6pjb6rH+HV4/+5dqcsiwtSeNtZj/Lr8e/vWNRKqH9vqMX5dvtk3CMAIIF4IxNffE6Pmsns/AtmbfuOf4hPJWjDDNXuOL2KPuZTP2+oxfiX+o4eGKwVcKYwz9bi3P/3GP8OT9Ghu6sQe1ZPveuIt9Ri/Fo/a3Ibp7qm8DnCqH0EqLfKwN/3GP8NrGH1JwtLFA/HyIgAzgXAlzxfLvwflS+Bl1OyJ8OYJuImpc2WbgIfSafLaRo/x6/IlKmtoARkxA1JGi89hAqImWHw+JN/8N0NEyA97y+vdJGtv+o1/ik9kmzoHqR4yjB7sRw9Ey79H5WvVHDNQYvHymwbcIvXy2970G/+fVe1bzgdvvdAExOyWxsny70H56pfKKBYspkWQJC2mzc7632PyD/H5VjDnNtqQJrQi2ux7PH7JtU6ltIrlroZTTb2hWd/y73H5dmuDBDBTyjPZw4n9SBbDb6nH+LX45fxI5bv1QW5iOl2JOAAEZo84bKHH+O/g7+5Pps6V/rfMpJfrlJvqMX5l/nZ/EiOJmAEAtT9CvPjSBO9Wv/GfrVv9XBteuNIkldaoLKuffwov5ZlIXT3krzMPwPz3Z/DsgTJw1l/WQ2CeczX3/vUb/7g+3J9EEFgLqplKfyaP1L3Z+e8x+XYrp6xl4JzrcUObT8Ly7zF52v+7jTfeeOONN35z/h9ztKqLi248DQAAAABJRU5ErkJggg==" alt="QR Code Mesa 3">
+            </div>
+            <div class="mesa-url">http://192.168.1.11:5001/cardapio?mesa=3</div>
+        </div>
+
+        <div class="qr-card">
+            <div class="mesa-numero">Mesa 04</div>
+            <div class="qr-image">
+                <img src="data:image/png;base64,iVBORw0KGgoAAAANSUhEUgAAAXIAAAFyAQAAAADAX2ykAAACgklEQVR4nO2bQWrkMBBFX40NWcqQA/RR1DcLc6TcoHWUvoG8bLD5s5Dk6U4IScAxdqhaGLf8Fh/EV6lKahPfifTnWzg477zzzjvvvPMf8VajB8YeGM3MBrDz2L6dN9Tj/Mp8lCRlIJ0mSCeJmGcDOkmSHvmf1uP8yvxYHWoveTbitb9jqrE31eP8Onz/5rfSkGWEqb1trMf5dfm381tjNFQf2+pxfl2+zW8QMALxahBfnyeLmsvX+xbI3vQ7/yU+2bJhpmvzOT7Jzsxl+7ytHudX4t87NNxMcDMxzqbHb/vT7/xXeDPraTbtZGeqk+9r4g31OL8WT6lulQGCBGECwoQudKqPIJUS+bI3/c5/iU9Dp1L11seTgNkg3Mxerp5/D8ov++dMsW4ausnS0JVhgx6l09RrGz3Or8tTm49BZS0mZpAybX0OE0RN+Pp8SL75d+wnCPmhoRFyfbnrZO1Nv/OfxP3+CiDm6tpi5zqG+/eYfJtfTbRZbWPlLfMwtjf9zn8SLf9Oi3WlmnBzVz5Inn+Pyrf+1fhUTo2MMPekIYvSxGLG4uuz599j8tW/sS3IJYqTy9F+Xbjdv4fkW14NqrVQaWLRqabeoFYz+fwekG/+zdSEu9S/Nf9Cu73j83tAfjk/EsC0jHeTpdPNiBcwmHviZQs9zv8Ef3d/Mp0k0mlCl7EdHaVhYz3Or8z/vz8Z82xluYauFU7Xnrr72ql+5z+K9/m3K/VvqXpL+P75t/C6hJuRhnrIL5VKCffv7+DtDBCvZvpr9RDYXnKd7v3rd/5N3PU3VAqiWhVV1y7XObw+OiLf+s8lloZzrlNbW88Zz7/H5M3/3+28884777zzm/P/AFtCwedEaZysAAAAAElFTkSuQmCC" alt="QR Code Mesa 4">
+            </div>
+            <div class="mesa-url">http://192.168.1.11:5001/cardapio?mesa=4</div>
+        </div>
+
+        <div class="qr-card">
+            <div class="mesa-numero">Mesa 05</div>
+            <div class="qr-image">
+                <img src="data:image/png;base64,iVBORw0KGgoAAAANSUhEUgAAAXIAAAFyAQAAAADAX2ykAAACoklEQVR4nO2bXWrcMBRGz60FebQhC5ilaHbQJYUuaXZgLWUWUJAfAzJfHyQlbkpDQl13ptz7YMaj8/CBuL+STXzG0pdP4eC8884777zzzv+Ot2YBWAIkMzObwM5LXzsfqMf5nfkoScpAOhVglIh5NWCQJOln/m/rcX5nfmkeak95NeI1bJjm2IfqcX4fPrx5V5qyjLH0XwfrcX5f/u3+NlsMtcexepzfl+/7OwpYgHg1iJfHYlFrXd2OQG5Nv/Mf4jcFM0Pfz+VBdmat5fOxepzfif/VQ8dnEzybWFbTz2u3p9/5j/BmFuhuOsjONE/e9MRH6nF+L57a3SoDUQXNYwHGgmYGtcco1RZ5vjX9zr9vzTHTGWCZsHgNEC8PAlYT43erNdcxepzfl9/0R0onQZqGYmka6n8GAaVTCTpGj/P78j0+q6AZIGaQMj0+j6UGbo/P98ynaRCMkr5NL2tjYbt6pB7nd+JrfDYIBZZQYMyQvpYASygGAeLF8++d8jU+E+ujUCO1JGnmNVL3OO7x+U755bXNHdrU6ikPMju1/GvnQ/U4vw/f5ldpwmAsAVgDacqiDrFYsXh57CdJt6bf+fet5d8oMJaJuo3xEgrp3KoqpdOzz5/vk+95dZRqwRzzIOqtjQxtdJU9/94p3/33Gopa/l1NLJMRL0MxMNrp4SF6nN+Xf5lvaHPNSspDd+deWPt844757f1JBpFOBc0vNXWaDtbj/M786/3JqGcjZgBenPga2vTyVvU7/ztr843MprR6nXQ0Gz0+/ye8ZlYjTe2QX8pDm2TN/0SP83/Gv70/2ftfQ8mGeghMzMjifIQe5/flN/PnXjX3InqG7XUO73/vkWf78QmDtue/Y0/CNTv7/t4hb/59t/POO++8884fzv8A01WYqFLrdUoAAAAASUVORK5CYII=" alt="QR Code Mesa 5">
+            </div>
+            <div class="mesa-url">http://192.168.1.11:5001/cardapio?mesa=5</div>
+        </div>
+
+        <div class="qr-card">
+            <div class="mesa-numero">Mesa 06</div>
+            <div class="qr-image">
+                <img src="data:image/png;base64,iVBORw0KGgoAAAANSUhEUgAAAXIAAAFyAQAAAADAX2ykAAACfklEQVR4nO2bQYrjMBBFX40DWdowB+ijKDcb5ki5gX2UHGBAXgZs/iwkOU6a7nTTHrc9VC1EEr/FB1Hlqi/FxGei+/EpHJx33nnnnXfe+bd4y3EA+gPAaGYN2Kkvz04r6nF+YT5IkiLQvQzQNZUIcTSgkiTpnv/XepxfmO9zhtqvOBrhcpgxObFX1eP8Mvzh4bu6Jsqoh/JpZT3OL8s/7m+O3lBe1tXj/LJ82d9aQA+Ei0E4/xwsaExP5xbI1vQ7/yG+MysNM1XZz/4oOzGm9nldPc4vxL/O0PpqgquJfjTdP9uefuc/wpvZgZKmlexEzuS7mXg9Pc4vxZOG26ABqOeLWirlpZbSiNxuTb/z70euz2kW6o9KuRrORwGjifqPpZ5rHT3OL8un/FULqK2VEhZS6hakrYfCbU2/80+imI+5FhMiSJFSn+uBVL29Pu+erwfomruvQLajv0GP81/mZ/lLiHlJBbmdJuEQ8fzdJz/5VxHB1dL8GyKlv+ob1DXTGLw1/c4/Cd1iaq3yCzdWSpOS/P27V770xWXCzb/WkqRpa2Pl8+8++cnf0N27NhZrQxooTbTv7/74d+bfNCTVKjOT7+8O+dRfWRBYuBgqXZURztVgYOTTw1X0OL8sP++vJidaKq1VKtzub+ycn92f7OwoupcBtX05Opp5HtvU7/wT/nZ/kvpqqcmCKYkvB7IdvVH9zr8VuSpHuPlXuUir+JN4//y/8Pr9cjW6Jh/yS7Eq3fW36HH+a/zj/UkLcYRwNtRZlUxKQkQW2jX0OL8sP/M3StecnY4yE5frHD7/7pGfzo+AqaEq1sbNn8Tfv/vkzf/f7bzzzjvvvPOr838B97jWsjHgCpoAAAAASUVORK5CYII=" alt="QR Code Mesa 6">
+            </div>
+            <div class="mesa-url">http://192.168.1.11:5001/cardapio?mesa=6</div>
+        </div>
+
+        <div class="qr-card">
+            <div class="mesa-numero">Mesa 07</div>
+            <div class="qr-image">
+                <img src="data:image/png;base64,iVBORw0KGgoAAAANSUhEUgAAAXIAAAFyAQAAAADAX2ykAAACgElEQVR4nO2bQY6cMBBFX8VIs6SlHKCP4r5ZzjQ3wEfpA4wEy5FAPwvbNN3RZHoUQiAqLxDYb/GlUpWrysbEV0b69iUcnHfeeeedd975j3growGGBtJpMrMT2GWoa5cN9Ti/Mh8lST2QziNAELGfDAiSJN3zf1uP8yvzQ/FQ+9FPRrw2C6Y49qZ6nF+Hbx6+lU69jHasbxvrcX5d/tG+ZQyGymNbPc6vy1f7tgIGIF4N4uv30aKmvLpsgexNv/NP8cmsJsyEas/hRXZhyunztnqcX4n/1UPbdxO8mxgm0/3a/vQ7/wxvZg3VTYPsQvHkRU28pR7n1+LJxW3UWIrgrh2BdkQdQeXRSmV1b/qd//0o8Tmd3iAZKF4biK8vAiYT7ZvlnGsbPc6vy8+BN8hiBwZhtHQKedagQek8NtpGj/Pr8jk+Sz2oA4g91M9QwvUieu9Nv/NP8eksQau7ZLkdy0s6Be8/H5Nf+m/22rYkWermSjj2uP8eky/2nbPm5Ry3SD3P7U2/85+MhS07gNiHWi71QblSku+/R+VrfFZJo/IhMG2ZKwvZ5m7f4/Fzf6Oe7+e9tq+tDWmkJtFu3+Pxi/hcvVYi39roS7pVaia37wH5RX9Syl5bsqqy/0K9veP2PSA/77+z67bF0jmdjg/d6b3pd/4Zfnl/kiDSeUTdcLtOubEe51fmb/kVTJaTLJid+NqU6mmv+p3/aJT9t2fecEPdjlX7k3j+/L/wUj8Z6VQO+Rc5V/dP9Dj/Z/zj/cl80BtfDSUL+RCY2JNPD/en3/lPxl1/o8ZnqF3n23UOr4+OyFMbGkD5K+V2knTrT+L77zF58/+7nXfeeeedd35z/icRze4U9hga9QAAAABJRU5ErkJggg==" alt="QR Code Mesa 7">
+            </div>
+            <div class="mesa-url">http://192.168.1.11:5001/cardapio?mesa=7</div>
+        </div>
+
+        <div class="qr-card">
+            <div class="mesa-numero">Mesa 08</div>
+            <div class="qr-image">
+                <img src="data:image/png;base64,iVBORw0KGgoAAAANSUhEUgAAAXIAAAFyAQAAAADAX2ykAAAChElEQVR4nO2bQW7bMBBF31QCvJSBHCBHoW7Qs/YG4lFyA3FpgMLvgqRsB2iToLJiFcONbfgtPjAYzswfycRXTvzxJRycd95555133vk/8VZPj40A0XrMzovZmNp/4456nN+K78tHmADSC8DSA4tB6hGpywDYPnqcfwyfWobGcyeC8g1jZv3eepx/FJ96gE4wZGz8dj3Ob8lrAiCZQTqp/vw+Pc7/G98u3kFAqmVWkGsRDr/g1gJ5Nv3Of4qPZmZ2BsIMNqaTCHMnYCnt8756nN+IL/l7zVCRFlN8vVj7497AfDb9zn9wJEkwSEAnaa6tlTQDQbnW5CBJ07Ppd/5TfHgz0zRkSmindGoxT83z2FWP8xvx9X6Or7m38NZngy4TtJiK0zHU+9n9jSPzYYaaukPGxnSSmZ1EPC9GsbP21OP8Rnypv+VqDnMnaS24sI7DQ27cs+l3/oOj9cAgaaJT6aU0t28TeH91TL72z2FmbZMzlE66BbkiHt8j820qmqAW4bJVGC5W7cp99Ti/Cd/qKlBydeJu/oUabq+/h+RXfyO3b3Q13BNQarKUvf4emZfeTiKua97QAgpAmZT21OP85vxiNg4Xk+a6X7Ax9Wgq62Cffw/Kl4yt0Us9xJ8XUzxjIq3WxjC7f3VM/mb+bZNSez4nzNRLOlwn4WfT7/zfz13+0uWyGoy2LvnTSyaeu730OP8QvhpWUKvuILX5N4PX38PyN/5VvYbb/vfaP5clsM+/R+T7d78Vzx2KYw+x5SzROp+P/ic+XHcO5ZmOxd9fODY/VJPSxrL/ra+raCqDcX7PP1qP89vwqysJlCUD99bkfMt5/T0ab/5+t/POO++8887vzv8GFKCojCj/uTsAAAAASUVORK5CYII=" alt="QR Code Mesa 8">
+            </div>
+            <div class="mesa-url">http://192.168.1.11:5001/cardapio?mesa=8</div>
+        </div>
+
+        <div class="qr-card">
+            <div class="mesa-numero">Mesa 09</div>
+            <div class="qr-image">
+                <img src="data:image/png;base64,iVBORw0KGgoAAAANSUhEUgAAAXIAAAFyAQAAAADAX2ykAAACdklEQVR4nO2bTYrcMBCFX0WGWcowB8hR5JvlTH0D+Sh9gIC0HJB5Wahku3uSzAw4xgpVC2Pjb/GgKNWfLcRXbP72JRww3njjjTfeeOP/xIvaACAPwCwDMI+ATLm9m07UY/zBfCBJJgDz9wLAF8iPtAgAR5LkI/+v9Rh/MJ81QqtXw33YMRrYp+ox/hh+eHrmPCYKfGl3J+sx/lj+2b9qWUC9nKvH+GP55l9PABlAuAsQbq9FApf6dj8CuZp+4z/FzyIiMgIywTV/5hfKhKWWz+fqMf4g/n2E+jch8CZEXoSP766n3/jP8CIyoIWpo0zQSN71xGfqMf4oHtws+gJGr/0vIxz14snaIser6Tf+71YDU7ancB+AcHshgEUI/1NqzXWOHuOP5TV+IxwBXwDU+sqRcUWiL427mn7jPzAdPnqSTK4OKetFj+YCBBbY+dwxT6ZFZPIFIuP6roYzgHl0Nn/umVev5gEIyVGXDHmATHkAwt363075Nf+ud1uuxXZSw/Jvn/zqVRIhtV1gTbhJay7S8m+vfOt/E1rrC0DLLa6uTc763z557AK27vITqkNr/Uy2mYf5t0d+l2tr1Ma1/9WYJhGS5d9OeZ1fhfRapC58sQiRR0G4uSJ1tuXXJcPV9Bv/gfHRNFZbaYWwlVsWv93y++8nof0vY14/pxxP1mP8UfxaX+l8sjVELRMHWv7tmcd2KreGVw/k2hpVs/r5f+EZsQjmUZf8decQoUOs6+s3/tGev58UeADhJuAsri6BERIoIZ6hx/hj+d/kX/1XQaN2/ZzD8m+PfNv/VnNrf7Rt9Qs0O5t/O+TF/u823njjjTfe+NP5X/ME8fdscdfDAAAAAElFTkSuQmCC" alt="QR Code Mesa 9">
+            </div>
+            <div class="mesa-url">http://192.168.1.11:5001/cardapio?mesa=9</div>
+        </div>
+
+        <div class="qr-card">
+            <div class="mesa-numero">Mesa 10</div>
+            <div class="qr-image">
+                <img src="data:image/png;base64,iVBORw0KGgoAAAANSUhEUgAAAXIAAAFyAQAAAADAX2ykAAACbUlEQVR4nO2bQW7bMBBF35QGspSBHiBHoW/gIxU9Um9AHcU3kJYGaPwuSEpy0jYNqihWMbMKo7f4wICfM0PaxHui//IuHJx33nnnnXfe+d/xVuMA/RHM7IDZEew0tm+nDfU4vzIfJUkDEC9m0GWIw82AIEnSPf/RepxfmR/rDjU7hpclddnY2+px/mN4JW6mBOj7EZQ+WY/zK/NxCKomPT7JTp+tx/l/4pvxdgJGoD9n6M/CokCMsPTrR9Pv/J+j5rc3AAIWL4ds8XLIMH7NFn/cbEs9zq/Lo/sAgqDLSMOrr0qPpt/5v+Frw2tmxOFm0uWAnQiqpfPo9fOueUlXW7a5XV7Wz/1zxk4b6nF+Xd7MnkRvZvTPEn1pgm8G3dXs28Xsjv9oPc6vxZcTljhMfynXUzdNSOqm/z2afuffiDmXc0FVkpwIUuoyROU6wvT87pOPQ62agZvRH6Etodn1hnqcX5U3OwK9PanUyvFSq2Y7laWfvzvlmz83G56b4IVnp5l7NP3OvxFtcpEhDjCPNmbPrl89vzvk72rlbq60Qsl5S3yQ53eX/NQfBSkRmjWXTLckV/f2/O6Pn/ZvmLqiybMHUOqW3bHnd2/8y4YXurqs5y+01zue3x3yv7g/gpJkmiv7fGPv/OL9ZBwo/a/S2K6OyrhjQz3Or8VP/ixJQ/Pn2v/WqtnP3/3yi/uFZcM7UFujEl4//y98dWVCeVpXOuHE9JLy0fU7fx+HF2uDkOnPV1Nv7RI4Dshi2kKP8+vyr89fqjXXXdtl2pDS/Xl//HShADAXVG1qtRhM+/m7R978993OO++88847vzn/E0LIGMvjyBYKAAAAAElFTkSuQmCC" alt="QR Code Mesa 10">
+            </div>
+            <div class="mesa-url">http://192.168.1.11:5001/cardapio?mesa=10</div>
+        </div>
+
+    </div>
+    
+    <div class="instrucoes">
+        <h3>Instruções para uso:</h3>
+        <ul>
+            <li>Coloque um QR Code em cada mesa do restaurante</li>
+            <li>Os clientes devem escanear o QR Code com a câmera do celular</li>
+            <li>O sistema irá abrir automaticamente no navegador</li>
+            <li>O cliente poderá fazer o pedido diretamente pelo celular</li>
+            <li>Os pedidos aparecerão no painel administrativo em tempo real</li>
+        </ul>
+        
+        <h3>Acesso ao Painel Administrativo:</h3>
+        <p><strong>URL:</strong> http://localhost:5000/admin</p>
+        <p>Use o painel para gerenciar mesas e confirmar pagamentos</p>
+    </div>
+</body>
+</html>

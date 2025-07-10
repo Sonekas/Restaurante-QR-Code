@@ -1,0 +1,208 @@
+<!DOCTYPE html>
+<html lang="pt-BR">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Restaurante QR - Sistema de Pedidos</title>
+    <link rel="stylesheet" href="styles.css">
+    <link href="https://fonts.googleapis.com/css2?family=Inter:wght@300;400;500;600;700&display=swap" rel="stylesheet">
+    <link href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.0.0/css/all.min.css" rel="stylesheet">
+</head>
+
+<body>
+    <!-- Loading Screen -->
+    <div id="loading-screen" class="loading-screen">
+        <div class="loading-spinner"></div>
+        <p>Carregando...</p>
+    </div>
+
+    <!-- Header -->
+    <header class="header">
+        <div class="container">
+            <h1 class="logo">
+                <i class="fas fa-utensils"></i>
+                Restaurante QR
+            </h1>
+            <div class="mesa-info" id="mesa-info" style="display: none;">
+                <span class="mesa-numero">Mesa <span id="numero-mesa"></span></span>
+            </div>
+        </div>
+    </header>
+
+    <!-- Main Content -->
+    <main class="main-content">
+        <!-- Tela de Boas-vindas -->
+        <section id="welcome-screen" class="welcome-screen">
+            <div class="container">
+                <div class="welcome-card">
+                    <div class="welcome-icon">
+                        <i class="fas fa-qrcode"></i>
+                    </div>
+                    <h2>Bem-vindo ao Restaurante QR!</h2>
+                    <p>Para começar, informe seu nome e o número da mesa:</p>
+
+                    <form id="welcome-form" class="welcome-form">
+                        <div class="form-group">
+                            <label for="cliente-nome">Seu nome:</label>
+                            <input type="text" id="cliente-nome" name="cliente-nome" required
+                                placeholder="Digite seu nome completo">
+                        </div>
+
+                        <div class="form-group">
+                            <label for="numero-mesa-input">Número da mesa:</label>
+                            <input type="number" id="numero-mesa-input" name="numero-mesa" min="1" max="10" required
+                                placeholder="Ex: 3">
+                        </div>
+
+                        <button type="submit" class="btn btn-primary">
+                            <i class="fas fa-play"></i>
+                            Começar Pedido
+                        </button>
+                    </form>
+                </div>
+            </div>
+        </section>
+
+        <!-- Cardápio -->
+        <section id="cardapio-screen" class="cardapio-screen" style="display: none;">
+            <div class="container">
+                <!-- Informações do Cliente -->
+                <div class="cliente-info">
+                    <h3>Olá, <span id="nome-cliente"></span>!</h3>
+                    <p>Mesa <span id="mesa-numero-display"></span></p>
+                </div>
+
+                <!-- Filtros de Categoria -->
+                <div class="categoria-filters">
+                    <button class="filter-btn active" data-categoria="todas">Todas</button>
+                    <button class="filter-btn" data-categoria="entrada">Entradas</button>
+                    <button class="filter-btn" data-categoria="prato_principal">Pratos</button>
+                    <button class="filter-btn" data-categoria="bebida">Bebidas</button>
+                    <button class="filter-btn" data-categoria="sobremesa">Sobremesas</button>
+                </div>
+
+                <!-- Lista do Cardápio -->
+                <div id="cardapio-lista" class="cardapio-lista">
+                    <!-- Itens serão carregados dinamicamente -->
+                </div>
+
+                <!-- Carrinho Flutuante -->
+                <div id="carrinho-float" class="carrinho-float" style="display: none;">
+                    <button id="ver-carrinho-btn" class="ver-carrinho-btn">
+                        <i class="fas fa-shopping-cart"></i>
+                        <span id="carrinho-count">0</span> itens
+                        <span id="carrinho-total">R$ 0,00</span>
+                    </button>
+                </div>
+
+                <!-- Botão Fechar Conta -->
+                <div class="fechar-conta-section">
+                    <button id="fechar-conta-cardapio-btn" class="btn btn-danger btn-fechar-conta">
+                        <i class="fas fa-receipt"></i>
+                        Fechar Conta
+                    </button>
+                </div>
+            </div>
+        </section>
+
+        <!-- Modal do Carrinho -->
+        <div id="carrinho-modal" class="modal">
+            <div class="modal-content">
+                <div class="modal-header">
+                    <h3>Seu Pedido</h3>
+                    <button class="modal-close" id="fechar-carrinho">
+                        <i class="fas fa-times"></i>
+                    </button>
+                </div>
+
+                <div class="modal-body">
+                    <div id="carrinho-itens" class="carrinho-itens">
+                        <!-- Itens do carrinho serão carregados aqui -->
+                    </div>
+
+                    <div class="carrinho-total">
+                        <div class="total-linha">
+                            <span>Total:</span>
+                            <span id="total-pedido">R$ 0,00</span>
+                        </div>
+                    </div>
+                </div>
+
+                <div class="modal-footer">
+                    <button id="continuar-pedido" class="btn btn-secondary">
+                        Continuar Pedido
+                    </button>
+                    <button id="confirmar-pedido" class="btn btn-primary">
+                        <i class="fas fa-check"></i>
+                        Confirmar Pedido
+                    </button>
+                </div>
+            </div>
+        </div>
+
+        <!-- Tela de Pedido Confirmado -->
+        <section id="pedido-confirmado-screen" class="pedido-confirmado-screen" style="display: none;">
+            <div class="container">
+                <div class="confirmacao-card">
+                    <div class="confirmacao-icon">
+                        <i class="fas fa-check-circle"></i>
+                    </div>
+                    <h2>Pedido Confirmado!</h2>
+                    <p>Seu pedido foi enviado para a cozinha.</p>
+                    <p>Você pode adicionar mais itens ou fechar a conta quando desejar.</p>
+
+                    <div class="confirmacao-actions">
+                        <button id="adicionar-mais-itens" class="btn btn-secondary">
+                            <i class="fas fa-plus"></i>
+                            Adicionar Mais Itens
+                        </button>
+                        <button id="fechar-conta-btn" class="btn btn-primary">
+                            <i class="fas fa-receipt"></i>
+                            Fechar Conta
+                        </button>
+                    </div>
+
+                    <div class="fechar-mesa-section">
+                        <hr class="divider">
+                        <p class="fechar-mesa-text">Deseja sair da mesa?</p>
+                        <button id="fechar-mesa-btn" class="btn btn-danger">
+                            <i class="fas fa-sign-out-alt"></i>
+                            Fechar Mesa
+                        </button>
+                    </div>
+                </div>
+            </div>
+        </section>
+
+        <!-- Tela de Conta Fechada -->
+        <section id="conta-fechada-screen" class="conta-fechada-screen" style="display: none;">
+            <div class="container">
+                <div class="conta-fechada-card">
+                    <div class="conta-fechada-icon">
+                        <i class="fas fa-receipt"></i>
+                    </div>
+                    <h2>Conta Solicitada!</h2>
+                    <p>Sua conta foi enviada para o caixa.</p>
+                    <p>Aguarde um de nossos atendentes para finalizar o pagamento.</p>
+
+                    <div class="resumo-pedido">
+                        <h3>Resumo do Pedido:</h3>
+                        <div id="resumo-itens"></div>
+                        <div class="resumo-total">
+                            <strong>Total: <span id="resumo-total-valor"></span></strong>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </section>
+    </main>
+
+    <!-- Toast Notifications -->
+    <div id="toast-container" class="toast-container"></div>
+
+    <!-- Scripts -->
+    <script src="script.js"></script>
+</body>
+
+</html>
