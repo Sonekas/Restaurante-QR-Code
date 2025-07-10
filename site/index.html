@@ -1,0 +1,173 @@
+<!DOCTYPE html>
+<html lang="pt-BR">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Portfólio - Sistema de Restaurante QR Code</title>
+    <link rel="stylesheet" href="style.css">
+    <link href="https://fonts.googleapis.com/css2?family=Inter:wght@300;400;500;600;700&display=swap" rel="stylesheet">
+    <link href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.0.0/css/all.min.css" rel="stylesheet">
+</head>
+
+<body>
+    <header>
+        <div class="container">
+            <h1>Sistema de Restaurante QR Code</h1>
+            <p>Um projeto de demonstração para portfólio</p>
+        </div>
+    </header>
+
+    <main>
+        <section id="overview" class="section-padded">
+            <div class="container">
+                <h2>Visão Geral do Projeto</h2>
+                <p>Este projeto é um sistema web local completo, desenvolvido para simular o funcionamento de um
+                    restaurante moderno que utiliza QR Codes nas mesas. O objetivo principal é demonstrar habilidades em
+                    desenvolvimento full-stack, cobrindo desde o backend com Python/Flask até o frontend responsivo com
+                    HTML, CSS e JavaScript.</p>
+                <p>O sistema permite que os clientes acessem o cardápio, façam pedidos diretamente de seus celulares e
+                    que o restaurante receba e gerencie esses pedidos através de um painel administrativo.</p>
+            </div>
+        </section>
+
+        <section id="features" class="section-padded bg-light">
+            <div class="container">
+                <h2>Funcionalidades Principais</h2>
+                <div class="features-grid">
+                    <div class="feature-item">
+                        <i class="fas fa-qrcode"></i>
+                        <h3>QR Code nas Mesas</h3>
+                        <p>Geração automática de QR Codes únicos para cada mesa, direcionando o cliente diretamente para
+                            o cardápio digital.</p>
+                    </div>
+                    <div class="feature-item">
+                        <i class="fas fa-mobile-alt"></i>
+                        <h3>Cardápio Digital Responsivo</h3>
+                        <p>Interface mobile-first para o cliente, permitindo fácil navegação pelo cardápio e adição de
+                            itens ao carrinho.</p>
+                    </div>
+                    <div class="feature-item">
+                        <i class="fas fa-utensils"></i>
+                        <h3>Sistema de Pedidos</h3>
+                        <p>Clientes podem montar seus pedidos, enviá-los para a cozinha e solicitar o fechamento da
+                            conta.</p>
+                    </div>
+                    <div class="feature-item">
+                        <i class="fas fa-cogs"></i>
+                        <h3>Painel Administrativo</h3>
+                        <p>Gerenciamento em tempo real do status das mesas, visualização de pedidos e confirmação de
+                            pagamentos.</p>
+                    </div>
+                    <div class="feature-item">
+                        <i class="fas fa-database"></i>
+                        <h3>Armazenamento Simplificado</h3>
+                        <p>Utilização de SQLite para persistência de dados de mesas, cardápio e pedidos, ideal para
+                            demonstração.</p>
+                    </div>
+                    <div class="feature-item">
+                        <i class="fas fa-code"></i>
+                        <h3>Código Organizado</h3>
+                        <p>Estrutura de projeto clara com separação de responsabilidades entre frontend e backend
+                            (Flask).</p>
+                    </div>
+                </div>
+            </div>
+        </section>
+
+        <section id="technologies" class="section-padded">
+            <div class="container">
+                <h2>Tecnologias Utilizadas</h2>
+                <div class="tech-list">
+                    <span><i class="fab fa-python"></i> Python</span>
+                    <span><i class="fab fa-python"></i> Flask</span>
+                    <span><i class="fas fa-database"></i> SQLite</span>
+                    <span><i class="fab fa-html5"></i> HTML5</span>
+                    <span><i class="fab fa-css3-alt"></i> CSS3</span>
+                    <span><i class="fab fa-js-square"></i> JavaScript</span>
+                    <span><i class="fas fa-qrcode"></i> qrcode (Python)</span>
+                </div>
+            </div>
+        </section>
+
+        <section id="demonstration" class="section-padded bg-light">
+            <div class="container">
+                <h2>Demonstração do Sistema</h2>
+                <p>Assista ao vídeo abaixo para ver o sistema em ação, demonstrando o fluxo completo do cliente e do
+                    painel administrativo.</p>
+                <div class="video-container">
+                    <!-- Placeholder para o vídeo de demonstração -->
+                    <video controls poster="./images/video_thumbnail.jpg">
+                        <source src="./videos/demonstracao_sistema.mp4" type="video/mp4">
+                        Seu navegador não suporta o elemento de vídeo.
+                    </video>
+                    <p class="caption">Um vídeo demonstrando o fluxo do cliente (acessando o
+                        cardápio, fazendo pedido, fechando conta).</p>
+                </div>
+
+                <h3>Galeria de Telas</h3>
+                <p>Confira algumas capturas de tela do sistema:</p>
+                <div class="gallery-grid">
+                    Placeholder para as capturas de tela -->
+                    <div class="gallery-item">
+                        <img src="./images/tela_boas_vindas.png" alt="Tela de Boas-Vindas">
+                        <p class="caption">Tela de Boas-Vindas do Cliente</p>
+                    </div>
+                    <div class="gallery-item">
+                        <img src="./images/tela_cardapio.png" alt="Tela do Cardápio">
+                        <p class="caption">Cardápio Digital</p>
+                    </div>
+                    <div class="gallery-item">
+                        <img src="./images/tela_carrinho.png" alt="Tela do Carrinho">
+                        <p class="caption">Carrinho de Pedidos</p>
+                    </div>
+                    <div class="gallery-item">
+                        <img src="./images/tela_admin_mesas.png" alt="Painel Admin - Mesas">
+                        <p class="caption">Painel Administrativo - Visão Geral das Mesas</p>
+                    </div>
+                    <div class="gallery-item">
+                        <img src="./images/tela_admin_detalhes.png" alt="Painel Admin - Detalhes">
+                        <p class="caption">Painel Administrativo - Detalhes do Pedido</p>
+                    </div>
+                    <div class="gallery-item">
+                        <img src="./images/qr_code_exemplo.png" alt="Exemplo de QR Code">
+                        <p class="caption">Exemplo de QR Code para Mesa</p>
+                    </div>
+                    <!-- Adicione mais imagens conforme necessário -->
+                </div>
+            </div>
+        </section>
+
+        <section id="security-notes" class="section-padded">
+            <div class="container">
+                <h2>Notas de Segurança e Melhorias Futuras</h2>
+                <p>É importante ressaltar que este projeto foi desenvolvido com foco em demonstração de funcionalidades
+                    e não em segurança para ambiente de produção. O README.md completo do projeto (disponível no
+                    repositório) detalha as melhorias de segurança necessárias para um ambiente real, como autenticação,
+                    autorização, validação de entrada e criptografia de dados.</p>
+                <p>Entre as melhorias futuras planejadas, destacam-se a integração com sistemas de pagamento,
+                    notificações em tempo real via WebSockets e a implementação de testes automatizados.</p>
+            </div>
+        </section>
+
+        <section id="repository" class="section-padded bg-light">
+            <div class="container text-center">
+                <h2>Acesse o Código Completo</h2>
+                <p>Confira o repositório no GitHub para explorar o código-fonte, a documentação detalhada e as
+                    instruções de como rodar o sistema localmente.</p>
+                <a href="https://github.com/SEU_USUARIO/SEU_REPOSITORIO" target="_blank" class="btn btn-primary"><i
+                        class="fab fa-github"></i> Ver no GitHub</a>
+            </div>
+        </section>
+    </main>
+
+    <footer>
+        <div class="container">
+            <p>&copy; 2025 Seu Nome. Todos os direitos reservados.</p>
+        </div>
+    </footer>
+
+    <script src="script.js"></script>
+</body>
+
+</html>
