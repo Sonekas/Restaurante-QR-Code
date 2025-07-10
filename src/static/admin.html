@@ -1,0 +1,142 @@
+<!DOCTYPE html>
+<html lang="pt-BR">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Painel Administrativo - Restaurante QR</title>
+    <link rel="stylesheet" href="admin-styles.css">
+    <link href="https://fonts.googleapis.com/css2?family=Inter:wght@300;400;500;600;700&display=swap" rel="stylesheet">
+    <link href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.0.0/css/all.min.css" rel="stylesheet">
+</head>
+
+<body>
+    <!-- Loading Screen -->
+    <div id="loading-screen" class="loading-screen">
+        <div class="loading-spinner"></div>
+        <p>Carregando painel...</p>
+    </div>
+
+    <!-- Header -->
+    <header class="admin-header">
+        <div class="container">
+            <h1 class="admin-logo">
+                <i class="fas fa-cogs"></i>
+                Painel Administrativo
+            </h1>
+            <div class="admin-actions">
+                <button id="refresh-btn" class="btn btn-secondary">
+                    <i class="fas fa-sync-alt"></i>
+                    Atualizar
+                </button>
+                <a href="/reset" class="btn btn-warning">
+                    <i class="fas fa-redo"></i>
+                    Reset Mesas
+                </a>
+                <a href="/" class="btn btn-primary">
+                    <i class="fas fa-home"></i>
+                    Voltar ao Site
+                </a>
+            </div>
+        </div>
+    </header>
+
+    <!-- Main Content -->
+    <main class="admin-main">
+        <div class="container">
+            <!-- Estatísticas -->
+            <section class="stats-section">
+                <h2>Estatísticas do Dia</h2>
+                <div class="stats-grid">
+                    <div class="stat-card">
+                        <div class="stat-icon">
+                            <i class="fas fa-chair"></i>
+                        </div>
+                        <div class="stat-info">
+                            <div class="stat-number" id="total-mesas">0</div>
+                            <div class="stat-label">Total de Mesas</div>
+                        </div>
+                    </div>
+
+                    <div class="stat-card success">
+                        <div class="stat-icon">
+                            <i class="fas fa-check-circle"></i>
+                        </div>
+                        <div class="stat-info">
+                            <div class="stat-number" id="mesas-livres">0</div>
+                            <div class="stat-label">Mesas Livres</div>
+                        </div>
+                    </div>
+
+                    <div class="stat-card warning">
+                        <div class="stat-icon">
+                            <i class="fas fa-utensils"></i>
+                        </div>
+                        <div class="stat-info">
+                            <div class="stat-number" id="mesas-ocupadas">0</div>
+                            <div class="stat-label">Mesas Ocupadas</div>
+                        </div>
+                    </div>
+
+                    <div class="stat-card danger">
+                        <div class="stat-icon">
+                            <i class="fas fa-credit-card"></i>
+                        </div>
+                        <div class="stat-info">
+                            <div class="stat-number" id="mesas-aguardando">0</div>
+                            <div class="stat-label">Aguardando Pagamento</div>
+                        </div>
+                    </div>
+
+                    <div class="stat-card info">
+                        <div class="stat-icon">
+                            <i class="fas fa-receipt"></i>
+                        </div>
+                        <div class="stat-info">
+                            <div class="stat-number" id="pedidos-hoje">0</div>
+                            <div class="stat-label">Pedidos Hoje</div>
+                        </div>
+                    </div>
+                </div>
+            </section>
+
+            <!-- Lista de Mesas -->
+            <section class="mesas-section">
+                <h2>Status das Mesas</h2>
+                <div class="mesas-grid" id="mesas-grid">
+                    <!-- Mesas serão carregadas dinamicamente -->
+                </div>
+            </section>
+        </div>
+    </main>
+
+    <!-- Modal de Detalhes da Mesa -->
+    <div id="mesa-modal" class="modal">
+        <div class="modal-content">
+            <div class="modal-header">
+                <h3 id="modal-title">Detalhes da Mesa</h3>
+                <button class="modal-close" id="fechar-modal">
+                    <i class="fas fa-times"></i>
+                </button>
+            </div>
+
+            <div class="modal-body">
+                <div id="mesa-detalhes">
+                    <!-- Detalhes serão carregados aqui -->
+                </div>
+            </div>
+
+            <div class="modal-footer" id="modal-footer">
+                <!-- Ações serão carregadas aqui -->
+            </div>
+        </div>
+    </div>
+
+    <!-- Toast Notifications -->
+    <div id="toast-container" class="toast-container"></div>
+
+    <!-- Scripts -->
+    <script src="admin-script.js"></script>
+</body>
+
+</html>
